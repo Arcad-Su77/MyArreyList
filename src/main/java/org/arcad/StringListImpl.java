@@ -13,21 +13,22 @@ public class StringListImpl implements StringList {
 
     public StringListImpl(int initSize) {
         this.strList = new String[initSize];
+        this.size = strList.length;
     }
 
     void validateIndex(int index) throws IndexOutOfBoundsException {
         if (index > size() || index < 0)
             throw new IndexOutOfBoundsException("Индекс вне диапазона массива");
     }
-    void validationSize() throws SizeArreOutException {
-        if (size > strList.length) throw new SizeArreOutException("Размер списка должен быть положительным числом");
+    void validationSize() throws ArrayIndexOutOfBoundsException {
+        if (size > strList.length) throw new ArrayIndexOutOfBoundsException("Размер списка должен быть положительным числом");
     }
     void validationItem(String item) throws ItemIsNullException {
         if (item.isEmpty()) throw new ItemIsNullException( "Строка в переменной item отсутствует.");
     }
 
     @Override
-    public String add(String item) throws SizeArreOutException {
+    public String add(String item) throws ArrayIndexOutOfBoundsException {
         validationSize();
         validationItem(item);
         strList[size++] = item;
