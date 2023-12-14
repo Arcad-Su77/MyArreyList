@@ -29,7 +29,7 @@ public interface StringList {
     // Вернуть удаленный элемент
     // или исключение, если подобный
     // элемент отсутствует в списке.
-    String remove(String item) throws Exception, ItemNotFound, ItemNotFoundException;
+    String remove(String item) throws Exception, ItemNotFoundException;
 
     // Удаление элемента по индексу.
     // Вернуть удаленный элемент
