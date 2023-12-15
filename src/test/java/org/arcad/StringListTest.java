@@ -1,70 +1,70 @@
 package org.arcad;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringListTest {
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @AfterEach
     void tearDown() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void add() {
     }
 
-    @org.junit.jupiter.api.Test
-    void testAdd() {
-    }
-
-    @org.junit.jupiter.api.Test
+    @Test
     void set() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void remove() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testRemove() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void contains() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void indexOf() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void lastIndexOf() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void get() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testEquals() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void size() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isEmpty() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void clear() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void toArray() {
     }
 }
