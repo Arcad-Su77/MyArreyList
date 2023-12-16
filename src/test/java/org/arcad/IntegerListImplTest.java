@@ -4,11 +4,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static java.lang.Math.random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IntegerListImplTest {
 
     private IntegerListImpl testList;
+    private long start;
+    private long finish;
+    private int MAX_SIZE = 200;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -23,6 +27,86 @@ class IntegerListImplTest {
     @Test
     void addNumber() throws Exception {
         assertEquals(100, testList.get(0));
+    }
+
+    @Test
+    void sortBobble() throws Exception {
+        IntegerListImpl birInt = new IntegerListImpl(MAX_SIZE);
+        for (int i = 1; i <= MAX_SIZE; i++) {
+            birInt.add((int) (random()*100));
+        }
+        start = System.currentTimeMillis();
+        birInt.sortBobble();
+        finish = System.currentTimeMillis() - start;
+        System.out.println("Sort Bobbly = "+finish);
+    }
+
+    @Test
+    void sortSelection() throws Exception {
+        IntegerListImpl birInt = new IntegerListImpl(MAX_SIZE);
+        for (int i = 1; i <= MAX_SIZE; i++) {
+            birInt.add((int) (random() * 100));
+        }
+        start = System.currentTimeMillis();
+        birInt.sortSelection();
+        finish = System.currentTimeMillis() - start;
+        System.out.println("Sort Selection = "+finish);
+    }
+
+    @Test
+    void sortInsertion() throws Exception {
+        IntegerListImpl birInt = new IntegerListImpl(100000);
+        for (int i = 1; i < 100000; i++) {
+            birInt.add((int) (random() * 100));
+        }
+        start = System.currentTimeMillis();
+        birInt.sortInsertion();
+        finish = System.currentTimeMillis() - start;
+        System.out.println("Sort Insertion = "+finish);
+    }
+
+    @Test
+    void allSort() throws Exception {
+        start = System.currentTimeMillis();
+        IntegerListImpl bigInt1 = new IntegerListImpl(MAX_SIZE);
+        for (int i = 1; i <= MAX_SIZE; i++) {
+            bigInt1.add((int) (random() * 100));
+        }
+        IntegerListImpl bigInt2 = new IntegerListImpl(bigInt1);
+        IntegerListImpl bigInt3 = new IntegerListImpl(bigInt2);
+        IntegerListImpl bigInt4 = new IntegerListImpl(bigInt3);
+        finish = System.currentTimeMillis() - start;
+        System.out.println("Initial List = " + finish);
+
+        System.out.println("bigInt1 = " + bigInt1.toString());
+        start = System.currentTimeMillis();
+        bigInt1.sortBobble();
+        finish = System.currentTimeMillis() - start;
+        System.out.println("bigInt1 = " + bigInt1.toString());
+        System.out.println("Sort Bobbly = "+finish);
+
+        System.out.println("bigInt2 = " + bigInt2.toString());
+        start = System.currentTimeMillis();
+        bigInt2.sortSelection();
+        finish = System.currentTimeMillis() - start;
+        System.out.println("bigInt2 = " + bigInt2.toString());
+        System.out.println("Sort Selection = "+finish);
+
+        System.out.println("bigInt3 = " + bigInt3.toString());
+        start = System.currentTimeMillis();
+        bigInt3.sortInsertion();
+        finish = System.currentTimeMillis() - start;
+        System.out.println("bigInt3 = " + bigInt3.toString());
+        System.out.println("Sort Insertion = "+finish);
+
+        System.out.println("bigInt4 = " + bigInt4.toString());
+        start = System.currentTimeMillis();
+        bigInt4.sortArreys();
+        finish = System.currentTimeMillis() - start;
+        System.out.println("bigInt4 = " + bigInt4.toString());
+        System.out.println("Sort Arreys = "+finish);
+
+
     }
 
     @Test

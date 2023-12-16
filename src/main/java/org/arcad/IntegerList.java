@@ -76,4 +76,6 @@ public interface IntegerList {
     // из строк в списке
     // и вернуть его.
     Integer[] toArray();
+
+    void sortArreys();
 }

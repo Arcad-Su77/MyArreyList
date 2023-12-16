@@ -18,14 +18,54 @@ public class IntegerListImpl implements IntegerList {
         this.intList = new Integer[size];
     }
 
-    public IntegerListImpl(Integer[] intList, int size) {
-        this.intList = intList;
-        this.size = size;
+    public IntegerListImpl(IntegerListImpl IntList) {
+        this.intList = Arrays.copyOf(IntList.intList, IntList.intList.length);
+        this.size = IntList.size;
+    }
+    private void swapElements(Integer[] arr, int indexA, int indexB) {
+        int tmp = arr[indexA];
+        arr[indexA] = arr[indexB];
+        arr[indexB] = tmp;
+    }
+    public void sortBobble() {
+        for (int i = 0; i < intList.length - 1; i++) {
+            for (int j = 0; j < intList.length - 1 - i; j++) {
+                if (intList[j] != null && intList[j+1] != null)
+                    if (intList[j] > intList[j + 1]) {
+                        swapElements(intList, j, j + 1);
+                    }
+            }
+        }
+    }
+
+    public void sortSelection() {
+        for (int i = 0; i < intList.length - 1; i++) {
+            int minElementIndex = i;
+            for (int j = i + 1; j < intList.length; j++) {
+                if (intList[j] != null)
+                    if (intList[j] < intList[minElementIndex]) {
+                        minElementIndex = j;
+                    }
+            }
+            swapElements(intList, i, minElementIndex);
+        }
+    }
+
+    public void sortInsertion() {
+        for (int i = 1; i < size; i++) {
+            int key = intList[i];
+            int j = i - 1;
+            while (j >= 0 && intList[j] > key) {
+                intList[j + 1] = intList[j];
+                j = j - 1;
+            }
+            intList[j + 1] = key;
+        }
     }
 
     private void validationSize() throws SizeArreOutException {
         if (size == intList.length) {
-            throw new SizeArreOutException("Массив полный");
+            throw new SizeArreOutException("Массив полный "+size+" : " +intList.length);
         }
     }
 
@@ -148,5 +188,26 @@ public class IntegerListImpl implements IntegerList {
     @Override
     public Integer[] toArray() {
         return Arrays.copyOf(intList, size);
+    }
+
+    @Override
+    public void sortArreys() {
+        Arrays.sort(intList, 0, size);
+    }
+    public void reverse() {
+        int start = 0;
+        int end = size - 1;
+        while (start < end) {
+            int temp = intList[start];
+            intList[start] = intList[end];
+            intList[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(intList);
     }
 }
