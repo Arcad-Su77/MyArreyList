@@ -78,4 +78,6 @@ public interface IntegerList {
     Integer[] toArray();
 
     void sortArreys();
+
+    void reverse();
 }

@@ -12,7 +12,7 @@ class IntegerListImplTest {
     private IntegerListImpl testList;
     private long start;
     private long finish;
-    private int MAX_SIZE = 200;
+    private final int MAX_SIZE = 200;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -78,34 +78,33 @@ class IntegerListImplTest {
         finish = System.currentTimeMillis() - start;
         System.out.println("Initial List = " + finish);
 
-        System.out.println("bigInt1 = " + bigInt1.toString());
+        System.out.println("bigInt1 = " + bigInt1);
         start = System.currentTimeMillis();
         bigInt1.sortBobble();
         finish = System.currentTimeMillis() - start;
-        System.out.println("bigInt1 = " + bigInt1.toString());
+        System.out.println("bigInt1 = " + bigInt1);
         System.out.println("Sort Bobbly = "+finish);
 
-        System.out.println("bigInt2 = " + bigInt2.toString());
+        System.out.println("bigInt2 = " + bigInt2);
         start = System.currentTimeMillis();
         bigInt2.sortSelection();
         finish = System.currentTimeMillis() - start;
-        System.out.println("bigInt2 = " + bigInt2.toString());
+        System.out.println("bigInt2 = " + bigInt2);
         System.out.println("Sort Selection = "+finish);
 
-        System.out.println("bigInt3 = " + bigInt3.toString());
+        System.out.println("bigInt3 = " + bigInt3);
         start = System.currentTimeMillis();
         bigInt3.sortInsertion();
         finish = System.currentTimeMillis() - start;
-        System.out.println("bigInt3 = " + bigInt3.toString());
+        System.out.println("bigInt3 = " + bigInt3);
         System.out.println("Sort Insertion = "+finish);
 
-        System.out.println("bigInt4 = " + bigInt4.toString());
+        System.out.println("bigInt4 = " + bigInt4);
         start = System.currentTimeMillis();
         bigInt4.sortArreys();
         finish = System.currentTimeMillis() - start;
-        System.out.println("bigInt4 = " + bigInt4.toString());
+        System.out.println("bigInt4 = " + bigInt4);
         System.out.println("Sort Arreys = "+finish);
-
 
     }
 
@@ -188,5 +187,29 @@ class IntegerListImplTest {
         Integer[] expectedArray = {100};
         Integer[] actualArray = testList.toArray();
         assertArrayEquals(expectedArray, actualArray);
+    }
+    @Test
+    void Reverse() throws Exception {
+        IntegerListImpl integerList = new IntegerListImpl(5);
+        integerList.add(1);
+        integerList.add(2);
+        integerList.add(3);
+        integerList.add(4);
+        integerList.add(5);
+
+        integerList.reverse();
+
+        assertEquals(5, integerList.get(0));
+        assertEquals(4, integerList.get(1));
+        assertEquals(3, integerList.get(2));
+        assertEquals(2, integerList.get(3));
+        assertEquals(1, integerList.get(4));
+    }
+
+    // Test for the reverse method in the IntegerListImpl class with empty list
+    @Test
+    void testReverseEmptyList() {
+        IntegerListImpl integerList = new IntegerListImpl(0);
+        assertDoesNotThrow(integerList::reverse);
     }
 }

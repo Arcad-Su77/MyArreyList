@@ -194,6 +194,8 @@ public class IntegerListImpl implements IntegerList {
     public void sortArreys() {
         Arrays.sort(intList, 0, size);
     }
+
+    @Override
     public void reverse() {
         int start = 0;
         int end = size - 1;
