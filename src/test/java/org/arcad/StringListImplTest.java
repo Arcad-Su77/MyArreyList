@@ -1,16 +1,23 @@
 package org.arcad;
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
 class StringListImplTest {
 
-    /*
-    This class tests the implementation of StringListImpl class
-    
-    */
+    private StringListImpl testList;
+    @BeforeEach
+    void setUp() {
+        testList = new StringListImpl();
+        testList.add("Item1");
+    }
+
+    StringListImplTest(StringListImpl testList) {
+        this.testList = testList;
+    }
+
 
     @Test
     void validateIndex() {

@@ -13,7 +13,7 @@ public interface IntegerList {
     // выбросить исключение.
     // Вернуть добавленный элемент
     // в качестве результата выполнения.
-    Integer add(int index, Integer number) throws Exception, SizeArreOutException;
+    Integer add(int index, Integer number) throws Exception;
 
     // Установить элемент
     // на определенную позицию,
@@ -28,13 +28,13 @@ public interface IntegerList {
     // Вернуть удаленный элемент
     // или исключение, если подобный
     // элемент отсутствует в списке.
-    Integer remove(Integer number) throws Exception, ItemNotFoundException;
+    Integer removeNum(Integer number) throws Exception, ItemNotFoundException;
 
     // Удаление элемента по индексу.
     // Вернуть удаленный элемент
     // или исключение, если подобный
     // элемент отсутствует в списке.
-    Integer remove(int index);
+    Integer removeIndex(int index);
 
     // Проверка на существование элемента.
     // Вернуть true/false;

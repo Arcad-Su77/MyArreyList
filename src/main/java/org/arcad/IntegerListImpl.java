@@ -8,15 +8,30 @@ public class IntegerListImpl implements IntegerList {
     private Integer[] intList;
     private int size;
 
+    public IntegerListImpl() {
+        this.intList = new Integer[10];
+        this.size = 0;
+    }
+
+    public IntegerListImpl(int size) {
+        this.size = 0;
+        this.intList = new Integer[size];
+    }
+
+    public IntegerListImpl(Integer[] intList, int size) {
+        this.intList = intList;
+        this.size = size;
+    }
+
     private void validationSize() throws SizeArreOutException {
         if (size == intList.length) {
-            throw new SizeArreOutException("Array is full");
+            throw new SizeArreOutException("Массив полный");
         }
     }
 
     private void validationIndex(int index) throws Exception {
         if (index < 0 || index >= size) {
-            throw new Exception("Invalid index");
+            throw new Exception("Индекс не верный");
         }
     }
 
@@ -36,7 +51,7 @@ public class IntegerListImpl implements IntegerList {
     }
 
     @Override
-    public Integer add(int index, Integer number) throws Exception, SizeArreOutException {
+    public Integer add(int index, Integer number) throws Exception {
         validationSize();
         validateNumber(number);
         validationIndex(index);
@@ -58,7 +73,7 @@ public class IntegerListImpl implements IntegerList {
     }
 
     @Override
-    public Integer remove(Integer number) throws Exception, ItemNotFoundException {
+    public Integer removeNum(Integer number) throws Exception, ItemNotFoundException {
         validateNumber(number);
         int index = -1;
         for (int i = 0; i < size; i++) {
@@ -76,7 +91,7 @@ public class IntegerListImpl implements IntegerList {
     }
 
     @Override
-    public Integer remove(int index) {
+    public Integer removeIndex(int index) {
         Integer num = intList[index];
         IntStream.range(index + 1, size).forEach(i -> intList[i - 1] = intList[i]);
         return num;
@@ -132,6 +147,6 @@ public class IntegerListImpl implements IntegerList {
 
     @Override
     public Integer[] toArray() {
-        return intList.clone();
+        return Arrays.copyOf(intList, size);
     }
 }
