@@ -27,6 +27,30 @@ public class IntegerListImpl implements IntegerList {
         arr[indexA] = arr[indexB];
         arr[indexB] = tmp;
     }
+    private void validationSize() throws SizeArreOutException {
+        if (size >= intList.length*0.9 && size < intList.length) grow();
+        if (size == intList.length) {
+            throw new SizeArreOutException("Массив полный "+size+" : " +intList.length);
+        }
+    }
+    private void validationIndex(int index) throws Exception {
+        if (index < 0 || index >= size) {
+            throw new Exception("Индекс не верный");
+        }
+    }
+
+    private void validateNumber(Integer number) throws Exception {
+        if (number == null) {
+            throw new Exception("Invalid number: null");
+        }
+    }
+
+    private void grow() {
+        int newSize = (int) (size * 1.5);
+        Integer[] newList;
+        newList = Arrays.copyOf(intList, newSize);
+        intList = newList;
+    }
     public void sortBobble() {
         for (int i = 0; i < intList.length - 1; i++) {
             for (int j = 0; j < intList.length - 1 - i; j++) {
@@ -62,25 +86,6 @@ public class IntegerListImpl implements IntegerList {
             intList[j + 1] = key;
         }
     }
-
-    private void validationSize() throws SizeArreOutException {
-        if (size == intList.length) {
-            throw new SizeArreOutException("Массив полный "+size+" : " +intList.length);
-        }
-    }
-
-    private void validationIndex(int index) throws Exception {
-        if (index < 0 || index >= size) {
-            throw new Exception("Индекс не верный");
-        }
-    }
-
-    private void validateNumber(Integer number) throws Exception {
-        if (number == null) {
-            throw new Exception("Invalid number: null");
-        }
-    }
-
     @Override
     public Integer add(Integer number) throws Exception {
         validationSize();

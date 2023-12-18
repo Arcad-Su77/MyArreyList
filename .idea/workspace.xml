@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1108f135-be62-4ae8-9a23-d944a82c99d1" name="Changes" comment="Final MyStringList">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arcad/IntegerList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/arcad/IntegerListImpl.java" afterDir="false" />
+    <list default="true" id="1108f135-be62-4ae8-9a23-d944a82c99d1" name="Changes" comment="Final MyIntList&#10;IntegerList: Sort 4 metod&#10;allSort master Test&#10;MAX_SIZE - size List">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/arcad/StringListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/arcad/StringListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/arcad/IntegerListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/arcad/IntegerListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/arcad/IntegerListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/arcad/IntegerListImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,18 +19,30 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="IntList" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,6 +67,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -65,30 +79,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.StringListImplTest.executor": "Run",
-    "Gradle.StringListImplTest.validationSize.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/arcad/IdeaProjects/MyArreyList/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.IntegerListImplTest.addNumber.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.allSort.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.clear.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.contains.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.get.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.indexOf.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.isEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.remove.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.removeNum.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.set.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.size.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.sortBobble.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.sortInsertion.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.sortSelection.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.testEquals.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IntegerListImplTest.toArray.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.StringListImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.StringListImplTest.validationSize.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/arcad/IdeaProjects/MyArreyList/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.arcad" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.arcad" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.StringListImplTest">
-    <configuration name="StringListImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.IntegerListImplTest.allSort">
+    <configuration name="IntegerListImplTest.allSort" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -101,7 +141,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.arcad.StringListImplTest&quot;" />
+            <option value="&quot;org.arcad.IntegerListImplTest.allSort&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -112,7 +152,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StringListImplTest.validationSize" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="IntegerListImplTest.sortBobble" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -125,7 +165,79 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.arcad.StringListImplTest.validationSize&quot;" />
+            <option value="&quot;org.arcad.IntegerListImplTest.sortBobble&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="IntegerListImplTest.sortInsertion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.arcad.IntegerListImplTest.sortInsertion&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="IntegerListImplTest.sortSelection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.arcad.IntegerListImplTest.sortSelection&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="IntegerListImplTest.toArray" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.arcad.IntegerListImplTest.toArray&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -138,8 +250,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.StringListImplTest" />
-        <item itemvalue="Gradle.StringListImplTest.validationSize" />
+        <item itemvalue="Gradle.IntegerListImplTest.allSort" />
+        <item itemvalue="Gradle.IntegerListImplTest.sortSelection" />
+        <item itemvalue="Gradle.IntegerListImplTest.sortBobble" />
+        <item itemvalue="Gradle.IntegerListImplTest.sortInsertion" />
+        <item itemvalue="Gradle.IntegerListImplTest.toArray" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +276,8 @@
       <workItem from="1702488433676" duration="2000" />
       <workItem from="1702529434641" duration="3320000" />
       <workItem from="1702617972595" duration="2654000" />
+      <workItem from="1702633446863" duration="22914000" />
+      <workItem from="1702911645493" duration="3863000" />
     </task>
     <task id="LOCAL-00001" summary="Main MyStringList">
       <option name="closed" value="true" />
@@ -178,7 +295,39 @@
       <option name="project" value="LOCAL" />
       <updated>1702532706519</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Start MyIntList">
+      <option name="closed" value="true" />
+      <created>1702635740788</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702635740789</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Final MyIntList&#10;IntegerList: Inpl + Test">
+      <option name="closed" value="true" />
+      <created>1702743829278</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702743829278</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Final MyIntList&#10;IntegerList: Sort 4 metod&#10;allSort master Test&#10;MAX_SIZE - size List">
+      <option name="closed" value="true" />
+      <created>1702759732219</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702759732219</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Final MyIntList&#10;IntegerList: Sort 4 metod&#10;allSort master Test&#10;MAX_SIZE - size List">
+      <option name="closed" value="true" />
+      <created>1702760506493</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702760506493</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +336,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Main MyStringList" />
     <MESSAGE value="Final MyStringList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final MyStringList" />
+    <MESSAGE value="Start MyIntList" />
+    <MESSAGE value="Final MyIntList&#10;IntegerList: Inpl + Test" />
+    <MESSAGE value="Final MyIntList&#10;IntegerList: Sort 4 metod&#10;allSort master Test&#10;MAX_SIZE - size List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final MyIntList&#10;IntegerList: Sort 4 metod&#10;allSort master Test&#10;MAX_SIZE - size List" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

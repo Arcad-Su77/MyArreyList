@@ -3,7 +3,6 @@ package org.arcad;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static java.lang.Math.random;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,6 +23,18 @@ class IntegerListImplTest {
     void tearDown() {
     }
 
+    @Test
+    void grow() throws Exception {
+        assertEquals(testList.size(), 1);
+        for (int i = 1; i <= 8; i++) {
+            testList.add((int) (random() * 100));
+        }
+        assertEquals(9, testList.size());
+        testList.add((int) (random() * 100));
+        assertEquals(101, (int) testList.add(101));
+        assertEquals(11, testList.size());
+
+    }
     @Test
     void addNumber() throws Exception {
         assertEquals(100, testList.get(0));
