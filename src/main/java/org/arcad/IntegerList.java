@@ -77,7 +77,15 @@ public interface IntegerList {
     // и вернуть его.
     Integer[] toArray();
 
-    void sortArreys();
+    // Сортирует стандартным методом Array.sort()
+    void sortArrays();
 
+    // Сортирует методом рекурсии
+    void sortRecurse();
+
+    // Сортирует посредством слияния
+    void sortMerge();
+
+    // Просто реверсирует массив
     void reverse();
 }

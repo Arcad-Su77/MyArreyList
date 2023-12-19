@@ -63,9 +63,9 @@ public class IntegerListImpl implements IntegerList {
     }
 
     public void sortSelection() {
-        for (int i = 0; i < intList.length - 1; i++) {
+        for (int i = 0; i < size-1; i++) {
             int minElementIndex = i;
-            for (int j = i + 1; j < intList.length; j++) {
+            for (int j = i + 1; j < size; j++) {
                 if (intList[j] != null)
                     if (intList[j] < intList[minElementIndex]) {
                         minElementIndex = j;
@@ -196,8 +196,71 @@ public class IntegerListImpl implements IntegerList {
     }
 
     @Override
-    public void sortArreys() {
+    public void sortArrays() {
         Arrays.sort(intList, 0, size);
+    }
+
+    @Override
+    public void sortRecurse() {
+        sortRecurseStepOne(intList, 0, size - 1);
+    }
+
+    private void sortRecurseStepOne(Integer[] arr, int begin, int end) {
+        if (begin < end) {
+            int mid = partition(arr, begin, end);
+            sortRecurseStepOne(arr, begin, mid-1);
+            sortRecurseStepOne(arr, mid + 1, end);
+        }
+    }
+
+    private int partition(Integer[] arr, int begin, int end) {
+        int pivot = arr[end];
+        int i = (begin - 1);
+        for (int j = begin; j < end; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+                swapElements(arr, i, j);
+            }
+        }
+        swapElements(arr, i + 1, end);
+        return i + 1;
+    }
+
+    @Override
+    public void sortMerge() {
+        mergeStepOne(intList);
+    }
+
+    private void mergeStepOne(Integer[] arr) {
+        if (arr.length < 2) return;
+        int mid = arr.length / 2;
+        Integer[] left = Arrays.copyOfRange(arr, 0, mid);
+        Integer[] right = Arrays.copyOfRange(arr, mid, arr.length);
+        mergeStepOne(left);
+        mergeStepOne(right);
+        mergeStepTwo(arr, left, right);
+    }
+
+    private void mergeStepTwo(Integer[] arr, Integer[] left, Integer[] right) {
+        int i = 0, j = 0, k = 0;
+        while (i < left.length && j < right.length) {
+            if (left[i] != null && right[j] != null) {
+                if (left[i] <= right[j]) {
+                    arr[k++] = left[i++];
+                } else {
+                    arr[k++] = right[j++];
+                }
+            } else {
+                if (left[i] == null) i++;
+                else j++;
+            }
+        }
+        while (i < left.length) {
+            arr[k++] = left[i++];
+        }
+        while (j < right.length) {
+            arr[k++] = right[j++];
+        }
     }
 
     @Override
