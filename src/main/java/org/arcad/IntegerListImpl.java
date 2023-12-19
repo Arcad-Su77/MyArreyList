@@ -46,11 +46,9 @@ public class IntegerListImpl implements IntegerList {
     }
 
     private void grow() {
-        int newSize = (int) (size * 1.5);
-        Integer[] newList;
-        newList = Arrays.copyOf(intList, newSize);
-        intList = newList;
+        intList = Arrays.copyOf(intList, (int) (size * 1.5));
     }
+
     public void sortBobble() {
         for (int i = 0; i < intList.length - 1; i++) {
             for (int j = 0; j < intList.length - 1 - i; j++) {
